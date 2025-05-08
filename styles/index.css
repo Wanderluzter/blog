@@ -190,7 +190,7 @@ footer {
   align-items: center;     /* Centraliza o conteúdo horizontalmente */
   height: 100vh;           /* 100% da altura da tela */
   margin: 0;
-  background: linear-gradient(rgba(18, 9, 39, 0.5), rgba(41, 6, 6, 0.5)), url('/imgs/mysterious_background.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(18, 9, 39, 0.5), rgba(41, 6, 6, 0.5)), url('../imgs/mysterious_background.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   color: white;
