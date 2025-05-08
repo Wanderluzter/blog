@@ -190,12 +190,16 @@ footer {
   align-items: center;     /* Centraliza o conteúdo horizontalmente */
   height: 100vh;           /* 100% da altura da tela */
   margin: 0;
-  background: linear-gradient(45deg, rgb(18, 9, 39), rgb(41, 6, 6)); /* Gradiente de fundo */
-  background-size: 400% 400%;
-  animation: gradientBackground 6s ease infinite; /* Animação do gradiente */
+  background: linear-gradient(rgba(18, 9, 39, 0.5), rgba(41, 6, 6, 0.5)), url('/imgs/mysterious_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
   font-family: 'montserrat', sans-serif;
+  animation: gradientBackground 6s ease infinite; /* Animação do gradiente */
+  cursor: url('/imgs/custom-cursor.png'), 16 16, auto;
+
 }
+
 
 /* === Animação do Gradiente === */
 @keyframes gradientBackground {
@@ -258,17 +262,4 @@ audio#bg-music {
   left: 20px;
   opacity: 0.7;
   border-radius: 5px;
-}
-
-/* === Efeito de Parallax no Fundo === */
-body {
-  background: url('imgs/mysterious_background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-  background-attachment: fixed;
-}
-
-/* === Cursor Personalizado === */
-body {
-  cursor: url('imgs/custom-cursor.png'), auto;
 }
