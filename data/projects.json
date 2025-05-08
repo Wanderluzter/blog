@@ -1,0 +1,27 @@
+[
+    {
+      "name": "VIVI",
+      "description": "Descrição do produto 1",
+      "url": "https://exemplo.com/produto1",
+      "image": "imgs/vivi.jpeg"
+    },
+    {
+      "name": "Produto 2",
+      "description": "Descrição do produto 2",
+      "url": "https://exemplo.com/produto2",
+      "image": "imgs/vivi.jpeg"
+    },
+    {
+      "name": "Produto 2",
+      "description": "Descrição do produto 2",
+      "url": "https://exemplo.com/produto2",
+      "image": "imgs/vivi.jpeg"
+    },
+    {
+      "name": "Produto 2",
+      "description": "Descrição do produto 2",
+      "url": "https://exemplo.com/produto2",
+      "image": "imgs/vivi.jpeg"
+    }
+  ]
+  
