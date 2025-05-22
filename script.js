@@ -7,8 +7,6 @@ function loadPage() {
     })
     .then(html => {
       document.getElementById('content').innerHTML = html;
-
-      // Carregamentos específicos por página
       if (page === 'projects') {
         loadProjects();
       } else if (page === 'posts') {
@@ -21,7 +19,7 @@ function loadPage() {
 }
 
 function loadProjects() {
-  fetch('/data/projects.json')
+  fetch('data/projects.json')
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById('container-cards');
@@ -48,7 +46,7 @@ function loadProjects() {
 }
 
 function loadPosts() {
-  fetch('/data/posts.json')
+  fetch('data/posts.json')
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById('container-cards');
