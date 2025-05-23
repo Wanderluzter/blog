@@ -1,21 +1,18 @@
 function loadPage() {
-  const page = location.hash.replace('#', '') || 'home';
-  fetch(`pages/${page}.html`)
-    .then(res => {
-      if (!res.ok) throw new Error('Page not found');
-      return res.text();
-    })
-    .then(html => {
-      document.getElementById('content').innerHTML = html;
-      if (page === 'projects') {
-        loadProjects();
-      } else if (page === 'posts') {
-        loadPosts();
-      }
-    })
-    .catch(err => {
-      document.getElementById('content').innerHTML = '<p>Page not found.</p>';
-    });
+  const hash = location.hash.replace('#', '');
+  const [route, param] = hash.split('/');
+
+  if (!route || route === 'home') {
+    loadHtmlPage('home');
+  } else if (route === 'posts') {
+    loadHtmlPage('posts', loadPosts);
+  } else if (route === 'projects') {
+    loadHtmlPage('projects', loadProjects);
+  } else if (route === 'post' && param) {
+    loadSinglePost(param);
+  } else {
+    document.getElementById('content').innerHTML = '<p>Página não encontrada.</p>';
+  }
 }
 
 function loadProjects() {
@@ -30,7 +27,6 @@ function loadProjects() {
         card.className = 'card';
 
         card.innerHTML = `
-          <img src="${project.image}" alt="${project.name}" />
           <h2>${project.name}</h2>
           <p>${project.description}</p>
           <a href="${project.url}" target="_blank">Ver Projeto</a>
@@ -57,17 +53,54 @@ function loadPosts() {
         card.className = 'card';
 
         card.innerHTML = `
-          <img src="${post.image}" alt="${post.title}" />
-          <h2>${post.title}</h2>
-          <p><strong>${post.date}</strong></p>
-          <p>${post.content}</p>
+          <a href="#post/${post.slug}">
+            <h2>${post.title}</h2>
+            <p><strong>${post.date}</strong></p>
+            <p>${post.content.substring(0, 100)}...</p>
+          </a>
         `;
 
         container.appendChild(card);
       });
     })
     .catch(err => {
-      document.getElementById('container-cards').innerHTML = '<p>Erro ao carregar posts 😢</p>';
+      container.innerHTML = '<p>Erro ao carregar posts 😢</p>';
+      console.error(err);
+    });
+}
+
+function loadSinglePost(slug) {
+  fetch('data/posts.json')
+    .then(res => res.json())
+    .then(posts => {
+      const post = posts.find(p => p.slug === slug);
+      if (!post) throw new Error('Post não encontrado');
+
+      document.getElementById('content').innerHTML = `
+  <article class="post-card fade-in">
+    <h1>${post.title}</h1>
+    <p><strong>${post.date}</strong></p>
+    <p>${post.content}</p>
+    </br>
+    <a href="#posts" class="btn">← Voltar para posts</a>
+  </article>
+`;
+
+    })
+    .catch(err => {
+      document.getElementById('content').innerHTML = '<p>Post não encontrado 😢</p>';
+      console.error(err);
+    });
+}
+function loadHtmlPage(page, callback) {
+  fetch(`pages/${page}.html`)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+      if (callback) callback();
+    })
+    .catch(err => {
+      document.getElementById('content').innerHTML = '<p>Erro ao carregar a página 😢</p>';
       console.error(err);
     });
 }

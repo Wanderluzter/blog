@@ -1,15 +1,16 @@
 [
-    {
-      "title": "Lost in the Fog",
-      "date": "2025-05-01",
-      "image": "/imgs/vivi.jpeg",
-      "content": "A story about wandering without a map..."
-    },
-    {
-      "title": "Dreams of Stars",
-      "date": "2025-04-20",
-      "image": "/imgs/vivi.jpeg",
-      "content": "Chasing the impossible in the middle of nowhere."
-    }
-  ]
-  
+  {
+    "title": "A Arte da Arte",
+    "slug": "a-arte-da-arte",
+    "date": "22-05-2025",
+    "image": "/imgs/vivi.jpeg",
+    "content": "Em um cenário atual onde jogos são produtos, Clair Obscure: Expedition 33 nos faz lembrar não só o que é videogame, mas o que significa transcender o meio digital e a mais pura forma de arte."
+  },
+  {
+    "title": "Outro post maneiro",
+    "slug": "outro-post-maneiro",
+    "date": "21-05-2025",
+    "image": "/imgs/outro.jpeg",
+    "content": "Conteúdo do segundo post, com várias informações interessantes..."
+  }
+]

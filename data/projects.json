@@ -1,27 +1,24 @@
 [
     {
-      "name": "VIVI",
-      "description": "Descrição do produto 1",
-      "url": "https://exemplo.com/produto1",
-      "image": "imgs/vivi.jpeg"
+      "name": "Vapt-Vupt",
+      "description": "Projeto da Fiap com Porto Seguro para o desenvolvimento de sistema de diagnóstico inteligente de carros.",
+      "url": "https://vaptvupt.vercel.app/",
+      "image": "/imgs/me.png"
     },
     {
-      "name": "Produto 2",
-      "description": "Descrição do produto 2",
-      "url": "https://exemplo.com/produto2",
-      "image": "imgs/vivi.jpeg"
+      "name": "Friendly",
+      "description": "Projeto de iniciação científica com a Fiap. Desenvolvemos um site que deixa mais amigável a interface usuário-Ia.",
+      "url": "https://friendly-app-v2-pfgt.vercel.app/"
     },
     {
-      "name": "Produto 2",
-      "description": "Descrição do produto 2",
-      "url": "https://exemplo.com/produto2",
-      "image": "imgs/vivi.jpeg"
+      "name": "Game Development",
+      "description":"Um curto vídeo showcase de projetos pessoais e de game jams que participei.",
+      "url": "https://www.youtube.com/watch?v=oPvzD0UQazA"
     },
     {
-      "name": "Produto 2",
-      "description": "Descrição do produto 2",
-      "url": "https://exemplo.com/produto2",
-      "image": "imgs/vivi.jpeg"
+      "name": "A.R.T.I.E",
+      "description":"Video de demostração do projeto Artie, um jogo de game jam em que fui game designer, level designer e co-programador.",
+      "url":"https://www.youtube.com/watch?v=J-0U1NFLH7w"
     }
   ]
   
