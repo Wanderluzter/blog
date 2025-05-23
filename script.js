@@ -4,6 +4,8 @@ function loadPage() {
 
   if (!route || route === 'home') {
     loadHtmlPage('home');
+  } else if (route === 'about') {
+    loadHtmlPage('about'); 
   } else if (route === 'posts') {
     loadHtmlPage('posts', loadPosts);
   } else if (route === 'projects') {
@@ -92,6 +94,7 @@ function loadSinglePost(slug) {
       console.error(err);
     });
 }
+
 function loadHtmlPage(page, callback) {
   fetch(`pages/${page}.html`)
     .then(res => res.text())
